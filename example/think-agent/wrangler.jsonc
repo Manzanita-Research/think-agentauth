@@ -1,0 +1,36 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "agentauth-think-demo",
+  "compatibility_date": "2026-04-29",
+  "compatibility_flags": ["nodejs_compat", "experimental"],
+  "main": "./worker/index.ts",
+  "dev": {
+    "inspector_port": 9231
+  },
+  "assets": {
+    "not_found_handling": "single-page-application",
+    "binding": "ASSETS"
+  },
+  "ai": {
+    "binding": "AI",
+    "remote": true
+  },
+  "vars": {
+    "AGENTAUTH_PROVIDER_URL": "http://localhost:3000",
+    "AGENTAUTH_HOST_NAME": "Local Think Demo"
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "class_name": "DemoThinkAgent",
+        "name": "DemoThinkAgent"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["DemoThinkAgent"]
+    }
+  ]
+}

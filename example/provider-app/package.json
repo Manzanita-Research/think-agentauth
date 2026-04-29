@@ -1,0 +1,35 @@
+{
+  "name": "@agentauth/example-provider",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 3000 --strictPort",
+    "deploy": "pnpm build && wrangler deploy",
+    "cf-typegen": "wrangler types",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm typecheck"
+  },
+  "dependencies": {
+    "@better-auth/agent-auth": "latest",
+    "@tanstack/react-router": "^1.131.36",
+    "@tanstack/react-start": "^1.131.36",
+    "better-auth": "latest",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "streamdown": "^2.5.0"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.34.0",
+    "@cloudflare/workers-types": "^4.20260426.1",
+    "@tanstack/router-plugin": "^1.131.36",
+    "@types/node": "^25.0.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "vite": "^7.3.0",
+    "wrangler": "^4.86.0"
+  }
+}

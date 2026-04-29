@@ -1,0 +1,19 @@
+{
+  "name": "agentauth-think-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.33.0",
+  "scripts": {
+    "dev": "concurrently -n provider,agent -c blue,green \"pnpm --filter @agentauth/example-provider dev\" \"pnpm --filter @agentauth/example-think-agent dev\"",
+    "dev:provider": "pnpm --filter @agentauth/example-provider dev",
+    "dev:agent": "pnpm --filter @agentauth/example-think-agent dev",
+    "build": "pnpm -r build",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @agentauth/think test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.9.3"
+  }
+}

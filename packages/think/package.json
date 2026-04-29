@@ -1,0 +1,33 @@
+{
+  "name": "@agentauth/think",
+  "version": "0.0.0",
+  "description": "Think-native AgentAuth tools for Cloudflare Agents.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@auth/agent": "^0.0.0 || ^0.1.0",
+    "ai": "^6.0.0",
+    "zod": "^4.0.0"
+  },
+  "dependencies": {
+    "ai": "^6.0.0",
+    "zod": "^4.1.13"
+  },
+  "devDependencies": {
+    "@auth/agent": "^0.1.0",
+    "vitest": "^4.0.17"
+  }
+}

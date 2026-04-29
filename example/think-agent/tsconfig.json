@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["@cloudflare/workers-types", "vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "@agentauth/think": ["../../packages/think/src/index.ts"]
+    }
+  },
+  "include": ["src", "worker", "vite.config.ts"]
+}
